@@ -6,13 +6,13 @@ using namespace std;
 class Solution {
 public:
 	vector<int> TwoSum(vector<int> &numbers, int target) {
-		//数组问题，首先考虑边角问题
+		//鏁扮粍闂锛岄鍏堣�冭檻杈硅闂
 		vector<int> res;
 		if (numbers.size()<=1)
 		{
 			return res;
 		}
-		//新建一个map<key, value>模式的来存储numbers里面的元素和index
+		//鏂板缓涓�涓猰ap<key, value>妯″紡鐨勬潵瀛樺偍numbers閲岄潰鐨勫厓绱犲拰index
 		unordered_map<int, int> mymap;
 		for (int i = 0; i < numbers.size(); i++)
 		{
@@ -20,7 +20,7 @@ public:
 		}
 		for (int j = 0; j < numbers.size(); j++) {
 			int rest_val = target - numbers[j];
-			if (mymap.find(rest_val)!=mymap.end())//find函数查找，有这个数则返回该数据位置迭代器，无则返回end
+			if (mymap.find(rest_val)!=mymap.end())//find鍑芥暟鏌ユ壘锛屾湁杩欎釜鏁板垯杩斿洖璇ユ暟鎹綅缃凯浠ｅ櫒锛屾棤鍒欒繑鍥瀍nd
 			{
 				int index = mymap[rest_val];
 				if (index == j)
@@ -43,15 +43,3 @@ public:
 	}
 };
 
-int main()
-{
-	vector<int> numbers;
-	Solution A;
-	numbers.push_back(2);
-	numbers.push_back(2);
-	numbers.push_back(11);
-	numbers.push_back(15);
-	vector<int> B;
-	B=A.TwoSum(numbers, 4);
-
-}
